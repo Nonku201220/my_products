@@ -46,6 +46,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 2rem;
+  padding: 30px 10px;
 }
 
 .column {
@@ -57,7 +58,7 @@
 
 .card {
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 20px;
   padding: 1rem;
   background-color: ghostwhite;
 }
