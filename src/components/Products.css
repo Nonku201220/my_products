@@ -1,0 +1,144 @@
+/* .products {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.product {
+    border-radius: 15px;
+    width: 300px;
+    height: 350px;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product img {
+    width: 400px;
+}
+
+.product.description {
+    text-align: center;
+}
+
+.product:hover {
+    transition: 0.3s ease-in;
+    cursor: pointer;
+} */
+
+/* .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+
+
+/* CSS for Product Card */
+
+.row {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.column {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: ghostwhite;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.card-text {
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(232, 240, 248, 0.5);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  background-color: #f2f2f2;
+  border: none;
+  color: #333;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 20%;
+}
+
+.pagination button.active {
+  background-color: #666;
+  color: #fff;
+}
+
+.pagination button:hover {
+  background-color: #ddd;
+}
