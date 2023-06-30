@@ -39,14 +39,14 @@
         return <li key = "data.id" ></li>
       })
       } *//* }
-      <pre>{JSON.stringify(data1, null, 2)}</pre>
-      
-    </div>
-  );
+<pre>{JSON.stringify(data1, null, 2)}</pre>
+ 
+</div>
+);
  
 };
 
-export default Products; */ 
+export default Products; */
 
 import React, { Component } from 'react';
 import '../components/Products.css';
@@ -60,7 +60,8 @@ export class Products extends Component {
       isLoaded: false,
       items: [],
       currentPage: 1,
-      itemsPerPage: 15
+      itemsPerPage: 15,
+      activeItem: null,
     };
   }
 
@@ -89,8 +90,14 @@ export class Products extends Component {
     });
   };
 
+  handleItemClick = (item) => {
+    this.setState({
+      activeItem: item.id === this.state.activeItem ? null : item.id
+    });
+  };
+
   render() {
-    const { error, isLoaded, items, currentPage, itemsPerPage } = this.state;
+    const { error, isLoaded, items, currentPage, itemsPerPage, activeItem } = this.state;
 
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -110,15 +117,23 @@ export class Products extends Component {
                 <img className="card-img-top" src={item.thumbnail} alt="Card image cap" />
                 <div className="card-body">
                   <h5 className="card-title">{item.title}</h5>
-                  <p className="card-text">{item.description}</p>
-                  <a href="#" className="btn btn-primary">
-                    $ {item.price.toFixed(2)}
-                  </a>
+                  {activeItem === item.id && (
+                    <div>
+                      <p className="card-text">{item.description}</p>
+                      <p className="card-text">$ {item.price.toFixed(2)}</p>
+                    </div>
+                  )}
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => this.handleItemClick(item)}
+                  >
+                    {activeItem === item.id ? 'Hide' : 'Show'}
+                  </button>
                 </div>
               </div>
             </div>
           ))}
-          
+
           <div className="pagination">
             {Array.from({ length: Math.ceil(items.length / itemsPerPage) }, (_, index) => (
               <button
@@ -138,7 +153,8 @@ export class Products extends Component {
 
 export default Products;
 
- 
+
+
 
 
 
@@ -170,7 +186,7 @@ return (
 <div className = "MyProduts">
 <h1> Fetch data from an api in react </h1> {
 //items.map(items =>  (
-    
+
         items.map(items =>  (
         <ol key={items.id}>
           <li>  title: {items.title},</li>
